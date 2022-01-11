@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 
     # local
     'quickstart',
-    # 'snippets',
+    'snippets',
 
     # 3rd party
     'rest_framework',
