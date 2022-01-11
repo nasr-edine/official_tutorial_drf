@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # local
-    'quickstart',
+    # 'quickstart',
     'snippets',
 
     # 3rd party
