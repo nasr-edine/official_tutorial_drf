@@ -2,6 +2,7 @@ from django.contrib.auth.models import User, Group
 from .serializers import UserSerializer, GroupSerializer
 from rest_framework import viewsets
 from rest_framework import permissions
+from rest_framework import generics
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -20,3 +21,13 @@ class GroupViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
+
+class UserList(generics.ListAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+        
+
+class UserDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
